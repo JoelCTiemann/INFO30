@@ -1,0 +1,63 @@
+
+<html>
+<head>
+	<title>Photo Book</title>
+
+	<style type="text/css">
+		img {width: 100%;}
+		.pequenas img {
+			opacity: 0.5;	
+			cursor: pointer;		
+		}
+		.pequenas img:hover {
+			opacity: 1;
+		}
+		.ativo {
+			border:2px solid cyan;
+			opacity: 1 !important;
+		}
+	</style>
+
+</head>
+<body>
+
+
+	<h1 align="center">!Photo Book!</h1>
+	<br>
+	<br>
+
+	<table width="600" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td colspan="8">
+				<img src="Fotos/1.jpg" id="foto" />
+			</td>
+		</tr>
+		<tr class="photos">
+			<td>
+				<img class="ativo" src="Fotos/1.jpg" onclick="PHBook(this)"   />
+			</td>
+			<td>
+				<img src="Fotos/2.jpg" onclick="PHBook(this)" />
+			</td>
+			<td>
+				<img src="Fotos/3.jpg" onclick="PHBook(this)"  />
+			</td>
+			
+		</tr>
+	</table>
+	
+	<script type="text/javascript">
+		
+		function PHBook(img) {
+			document.getElementById("foto").src = img.src;
+			imgs = document.querySelectorAll("tr.photos img");
+			for(var i = 0; i < imgs.length; i++) {
+				imgs[i].className = "";
+			}
+			img.className = "ativo";
+		}
+
+	</script>
+
+</body>
+</html>
